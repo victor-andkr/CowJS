@@ -1,0 +1,93 @@
+{
+  "NAME": "Cow.JS",
+  "VERSION": "1.1.0",
+  "maxScreenWidth": 1920,
+  "maxScreenHeight": 1080,
+  "mapScale": 14400,
+  "riverWidth": 724,
+  "gatherAngle": 1.208304866765305,
+  "hitAngle": 1.5707963267948966,
+  "shieldAngle": 1.0471975511965976,
+  "gatherWiggle": 10,
+  "serverUpdateRate": 9,
+  "designations": {
+    "plugins": {
+      "AUTO_RECONECT": "auto-reconect",
+      "CHECK_PLACEMENT": "check-placement"
+    },
+    "packets": {
+      "server": {
+        "INIT_DATA": "A",
+        "DISCONNECT": "B",
+        "SETUP_GAME": "C",
+        "ADD_PLAYER": "D",
+        "REMOVE_PLAYER": "E",
+        "UPDATE_PLAYERS": "a",
+        "UPDATE_LEADERBOARD": "G",
+        "LOAD_GAME_OBJECT": "H",
+        "LOAD_AI": "I",
+        "ANIMATE_AI": "J",
+        "GATHER_ANIMATION": "K",
+        "WIGGLE_GAME_OBJECT": "L",
+        "SHOOT_TURRET": "M",
+        "UPDATE_PLAYER_VALUE": "N",
+        "UPDATE_HEALTH": "O",
+        "KILL_PLAYER": "P",
+        "KILL_OBJECT": "Q",
+        "KILL_OBJECTS": "R",
+        "UPDATE_ITEM_COUNTS": "S",
+        "UPDATE_AGE": "T",
+        "UPDATE_UPGRADES": "U",
+        "UPDATE_ITEMS": "V",
+        "ADD_PROJECTILE": "X",
+        "REMOVE_PROJECTILE": "Y",
+        "SERVER_SHUTDOWN_NOTICE": "Z",
+        "ADD_ALLIANCE": "g",
+        "DELETE_ALLIANCE": "1",
+        "ALLIANCE_NOTIFICATION": "2",
+        "SET_PLAYER_TEAM": "3",
+        "SET_ALLIANCE_PLAYERS": "4",
+        "UPDATE_STORE_ITEMS": "5",
+        "RECEIVE_CHAT": "6",
+        "UPDATE_MINIMAP": "7",
+        "SHOW_TEXT": "8",
+        "PING_MAP": "9",
+        "PING_SOCKET_RESPONSE": "0",
+        "IO_INIT": "io-init"
+      },
+      "client": {
+        "ATTACK_STATE": "F",
+        "MOVE_DIR": "9",
+        "LOOK_DIR": "D",
+        "LOCK_MOVE_DIR": "K",
+        "MAP_PING": "S",
+        "SELECT_WEAPON": "z",
+        "SPAWN": "M",
+        "SELECT_UPGRADE": "H",
+        "STORE_EQUIP": "c",
+        "CHAT_MESSAGE": "6",
+        "PING_SOCKET": "e",
+        "ALLIANCE_JOIN_REQUEST": "P",
+        "KICK_FROM_CLAN": "Q",
+        "SEND_ALLIANCE_JOIN": "b",
+        "CREATE_ALLIANCE": "L",
+        "LEAVE_ALLIANCE": "N"
+      },
+      "items": {
+        "FOOD": 0,
+        "WALL": 1,
+        "SPIKE": 2,
+        "MILL": 3,
+        "TRAP": 4,
+        "TURRET": 5
+      }
+    }
+  },
+  "vultr": {
+    "regionPrefix": "vultr:",
+    "digitalOceanPrefix": "do:",
+    "defaultApiProd": "https://api.moomoo.io",
+    "defaultApiSandbox": "https://api-sandbox.moomoo.io",
+    "defaultApiDev": "https://api-dev.moomoo.io"
+  }
+}

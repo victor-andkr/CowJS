@@ -1,0 +1,19 @@
+{
+  "name": "cowjs",
+  "version": "1.0.0",
+  "description": "Open-source API for modding MooMoo.io — inspired by MooMoo.js",
+  "private": false,
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode production",
+    "extract": "node scripts/extract-from-bundle.cjs",
+    "setup": "powershell -ExecutionPolicy Bypass -File setup.ps1"
+  },
+  "dependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "devDependencies": {
+    "terser-webpack-plugin": "^5.3.10"
+  }
+}
