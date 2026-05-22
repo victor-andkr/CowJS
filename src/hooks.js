@@ -11,7 +11,7 @@ function initCodec() {
 
 /**
  * Optional: reuse game's msgpack ExtensionCodec if exposed on a global hook.
- * Primary path uses bundled msgpack (same wire format as assets-eb87bff7.js).
+ * Primary path uses bundled msgpack (same wire format as index-CRtgW-HM.js / _e.send).
  */
 function tryHookExtensionCodec() {
   CowUtils.createHook({
@@ -68,7 +68,7 @@ if (messageDescriptor?.set) {
 function isGameSocket(ws) {
   if (!(ws instanceof WebSocket)) return false;
   const url = ws.url || "";
-  return /moomoo\.io/i.test(url) || url.includes("localhost:3000");
+  return /moomoo\.io/i.test(url) || /localhost:3000/.test(url);
 }
 
 function dispatchToCow(event) {
