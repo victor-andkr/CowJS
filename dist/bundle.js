@@ -87,6 +87,9 @@ function _toPrimitive(t, r) {
     variants: () => M,
     weapons: () => S
   });
+
+  // CONFIG:
+
   const n = {
     NAME: "Cow.JS",
     VERSION: "1.1.0",
@@ -180,6 +183,7 @@ function _toPrimitive(t, r) {
       defaultApiDev: "https://api-dev.moomoo.io"
     }
   };
+  // PLAYER:
   class Player extends _Entity_js__WEBPACK_IMPORTED_MODULE_1__.default {
     constructor({
       id: e,
@@ -440,6 +444,7 @@ function _toPrimitive(t, r) {
     }
   }
   const r = Player;
+  // AUTO RECONECT:
   class AutoReconect extends _Plugin_js__WEBPACK_IMPORTED_MODULE_0__.default {
     constructor() {
       super({
@@ -455,6 +460,8 @@ function _toPrimitive(t, r) {
     }
   }
   const h = AutoReconect;
+  /*** START GAME CONFIGS ***/
+  // ACCESSOIRES:
   const p = [{
     id: 12,
     name: "Snowball",
@@ -606,6 +613,7 @@ function _toPrimitive(t, r) {
     return this.find(t => t.id === e);
   };
   const g = p;
+  // AI TYPES
   const m = [{
     id: 0,
     src: "cow_1",
@@ -748,6 +756,7 @@ function _toPrimitive(t, r) {
     chargePlayer: true,
     drop: ["food", 1000]
   }];
+  // GROUPS
   const y = [{
     id: 0,
     name: "food",
@@ -834,6 +843,7 @@ function _toPrimitive(t, r) {
     sandboxLimit: 299,
     layer: -1
   }];
+  // HATS:
   const k = [{
     id: 45,
     name: "Shame!",
@@ -1157,6 +1167,7 @@ function _toPrimitive(t, r) {
     return this.find(t => t.id === e);
   };
   const b = k;
+  // LIST:
   const A = [{
     group: y[0],
     name: "apple",
@@ -1456,6 +1467,7 @@ function _toPrimitive(t, r) {
     }
   }
   const O = A;
+  // PROJECTILES:
   const E = [{
     indx: 0,
     layer: 0,
@@ -1499,6 +1511,7 @@ function _toPrimitive(t, r) {
     scale: 160,
     range: 1400
   }];
+  // VARIANTS:
   const M = [{
     id: 0,
     src: "",
@@ -1521,6 +1534,7 @@ function _toPrimitive(t, r) {
     xp: 12000,
     val: 1.18
   }];
+  // WEAPONS:
   const S = [{
     id: 0,
     type: 0,
@@ -1795,6 +1809,10 @@ function _toPrimitive(t, r) {
     spdMult: 0.6,
     speed: 1500
   }];
+  /*** END GAME CONFIGS ***/
+
+  // COW:
+
   class Cow {
     constructor() {
       this.config = n;
@@ -1903,6 +1921,7 @@ function _toPrimitive(t, r) {
     }
   }
   const I = n.designations.packets.client;
+  // PLACEMENT:
   class Placement {
     constructor() {
       this.delay = 0;
@@ -1952,6 +1971,7 @@ function _toPrimitive(t, r) {
       }
     }
   }
+  // TICKER:
   class Ticker {
     constructor() {
       this.ticks = 0;
@@ -1988,6 +2008,7 @@ function _toPrimitive(t, r) {
     }
   }
   const T = Input;
+  // ANIMALS MANAGER:
   class AnimalsManager {
     constructor() {
       this.animals = new Map();
@@ -2055,6 +2076,7 @@ function _toPrimitive(t, r) {
     }
   }
   const x = AnimalsManager;
+  // OBJECT MANAGER:
   class ObjectsManager {
     constructor() {
       this.objects = new Map();
@@ -2144,6 +2166,7 @@ function _toPrimitive(t, r) {
     }
   }
   const C = ObjectsManager;
+  // PLAYERS MANAGER:
   class PlayersManager {
     constructor() {
       this.players = new Map();
@@ -2235,6 +2258,7 @@ function _toPrimitive(t, r) {
       });
     }
   }
+  // CAMERA:
   class Camera {
     constructor() {
       this.x = 0;
@@ -2272,6 +2296,7 @@ function _toPrimitive(t, r) {
     }
   }
   const v = Camera;
+  // RENDERER:
   class Renderer {
     constructor() {
       this.canvas = undefined;
@@ -2327,10 +2352,12 @@ function _toPrimitive(t, r) {
     }
   }
   const D = Renderer;
+  // LOAD AI:
   function loadAI(e) {
     re.animalsManager.updateAnimals(e);
   }
   const R = loadAI;
+  // ADD PROJECTILE:
   function addProjectile(e, t, n, r, h, p, g, m) {
     const y = r == 700 && h == 1.5 && p === 1;
     const {
@@ -2352,6 +2379,7 @@ function _toPrimitive(t, r) {
     }
   }
   const L = addProjectile;
+  // KILL OBJECT:
   function killObject(e) {
     const t = re.objectsManager.getById(e);
     if (!t) {
@@ -2360,6 +2388,7 @@ function _toPrimitive(t, r) {
     t.setActive(false);
   }
   const U = killObject;
+  // KILL OBJECTS:
   function killObjects(e) {
     if (!e) {
       return;
@@ -2367,6 +2396,7 @@ function _toPrimitive(t, r) {
     re.objectsManager.disableAllObjects(e);
   }
   const j = killObjects;
+  // LOAD GAME OBJECT:
   function loadGameObject(e) {
     const t = 8;
     for (let n = 0; n < e.length; n += t) {
@@ -2381,6 +2411,7 @@ function _toPrimitive(t, r) {
     }
   }
   const H = loadGameObject;
+  // WIGGLE GAME OBJECT:
   function wiggleGameObject(e, t) {
     const n = re.objectsManager.getById(t);
     if (!n) {
@@ -2389,9 +2420,11 @@ function _toPrimitive(t, r) {
     n.doWiggle(e);
   }
   const B = wiggleGameObject;
+  // ADD PLAYER
   function addPlayer(e, t) {
     re.playersManager.addPlayer(e, t);
   }
+  // GATHER ANIMATION:
   function gatherAnimation(e, t, n) {
     const r = re.playersManager.getById(e);
     if (!r) {
@@ -2400,10 +2433,12 @@ function _toPrimitive(t, r) {
     r.onGather(t, n);
   }
   const G = gatherAnimation;
+  // KILL PLAYER
   function killPlayer() {
     re.player.kill();
   }
   const N = killPlayer;
+  // REMOVE PLAYER:
   function removePlayer(e) {
     if (re.playersManager.players.size <= 1) {
       return;
@@ -2415,6 +2450,7 @@ function _toPrimitive(t, r) {
     re.playersManager.removePlayer(t.sid);
   }
   const W = removePlayer;
+  // UPDATE HEALTH:
   function updateHealth(e, t) {
     const n = re.playersManager.getById(e);
     if (!n) {
@@ -2423,15 +2459,18 @@ function _toPrimitive(t, r) {
     n.changeHealth(t);
   }
   const F = updateHealth;
+  // UPDATE PLAYERS
   function updatePlayers(e) {
     re.playersManager.updatePlayers(e);
     re.ticker.updateTicks();
   }
   const V = updatePlayers;
+  // UPDATE ITEM COUNTS
   function updateItemCounts(e, t) {
     re.player.itemCounts[e] = t;
   }
   const K = updateItemCounts;
+  // UPDATE ITEMS:
   function updateItems(e, t) {
     if (e === null || e === undefined || !e.length) {
       return;
@@ -2440,6 +2479,7 @@ function _toPrimitive(t, r) {
     re.player[n] = e;
   }
   const q = updateItems;
+  // UPDATE PLAYER VALUE:
   function updatePlayerValue(e, t, n) {
     if (!re.player) {
       return;
@@ -2447,10 +2487,12 @@ function _toPrimitive(t, r) {
     re.player[e] = t;
   }
   const J = updatePlayerValue;
+  // SETUP GAME:
   function setupGame(e) {
     X.setPlayerSid(e);
   }
   const Y = n.designations.packets.server;
+  // GET EVENTS:
   function getEvents() {
     return {
       [Y.SETUP_GAME]: setupGame,
@@ -2472,6 +2514,7 @@ function _toPrimitive(t, r) {
     };
   }
   const z = n.designations.packets.server;
+  // HANDLER:
   class Handler {
     constructor({
       socket: e
@@ -2541,6 +2584,7 @@ function _toPrimitive(t, r) {
     "socket-message": "onSocketMessage",
     "socket-close": "onSocketClose"
   });
+  // MANAGER:
   class Manager {
     constructor({
       socket: e
@@ -2566,6 +2610,7 @@ function _toPrimitive(t, r) {
   _defineProperty(Manager, "triggerKeys", {
     "set-websocket": "onWebSocketSetted"
   });
+  // SOCKET:
   class Socket {
     constructor() {
       this.websocket = undefined;
@@ -2633,6 +2678,8 @@ function _toPrimitive(t, r) {
       this.manager.trigger("set-websocket");
     }
   }
+
+  // CONSTANTS:
   const Q = {
     decoder: undefined,
     encoder: undefined,
@@ -2648,6 +2695,8 @@ function _toPrimitive(t, r) {
   const ie = new T();
   const ne = new Placement();
   const re = new Cow();
+
+  // COW UTILS:
   class CowUtils {
     static removeProto(e) {
       if (!(e instanceof Object)) {
@@ -2742,6 +2791,8 @@ function _toPrimitive(t, r) {
     }
   }
   const oe = CowUtils;
+  /*** START LIB ***/
+  // SYNC GAME CONFIG:
   function syncGameConfig() {
     const e = typeof window !== "undefined" ? window.config : null;
     if (!e || typeof e !== "object") {
@@ -2755,6 +2806,7 @@ function _toPrimitive(t, r) {
       }
     }
   }
+  // VULTR:
   function stripRegion(e) {
     if (typeof e !== "string") {
       return e;
@@ -2802,6 +2854,8 @@ function _toPrimitive(t, r) {
     }
     return t.defaultApiProd ?? "https://api.moomoo.io";
   }
+  /*** START MSGPACK ***/
+  // ENCODE:
   const encode = function (e) {
     const t = 4294967296;
     let n;
@@ -3018,6 +3072,7 @@ function _toPrimitive(t, r) {
     }
   };
   const ce = encode;
+  // DECODE:
   const decode = function (e) {
     const t = 4294967296;
     let n = 0;
@@ -3277,6 +3332,12 @@ function _toPrimitive(t, r) {
     }
   };
   const le = decode;
+  /*** END MSGPACK ***/
+
+  /*** END LIB ***/
+
+  // HOOK:
+
   function initCodec() {
     Q.encoder = {
       encode: ce
