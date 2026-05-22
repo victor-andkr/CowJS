@@ -2,12 +2,13 @@ import config from "../config.json";
 import { cow } from "../constants.js";
 
 /**
- * Merge live window.config from assets-eb87bff7.js when available.
- * The local player is Cow.player — not window.me (closure-scoped in the game bundle).
+ * Merge live window.config when the game bundle exposes it.
+ * index-CRtgW-HM.js (1.8.1) keeps config in closure (`const T`) — no window.config.
+ * Embedded values in config.json already match the live client.
  */
 export function syncGameConfig() {
   const live = typeof window !== "undefined" ? window.config : null;
-  if (!live || typeof live !== "object") return;
+  if (!live || typeof live !== "object") return false;
 
   const keys = [
     "maxScreenWidth",
@@ -27,4 +28,5 @@ export function syncGameConfig() {
       config[key] = live[key];
     }
   }
+  return true;
 }
