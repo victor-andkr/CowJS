@@ -1,6 +1,8 @@
 {
   "NAME": "Cow.JS",
-  "VERSION": "1.1.0",
+  "VERSION": "1.2.0",
+  "gameBundle": "index-CRtgW-HM.js",
+  "gameVersion": "1.8.1",
   "maxScreenWidth": 1920,
   "maxScreenHeight": 1080,
   "mapScale": 14400,
@@ -67,6 +69,7 @@
         "STORE_EQUIP": "c",
         "CHAT_MESSAGE": "6",
         "PING_SOCKET": "e",
+        "PING_SOCKET_SEND": "0",
         "ALLIANCE_JOIN_REQUEST": "P",
         "KICK_FROM_CLAN": "Q",
         "SEND_ALLIANCE_JOIN": "b",
