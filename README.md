@@ -50,9 +50,11 @@ npm run watch      # rebuild on change
 npm run extract    # re-extract src/ from vendor/CowJS.bundle.js
 ```
 
-## Game compatibility (assets-eb87bff7.js v1.8.1)
+## Game compatibility (`index-CRtgW-HM.js` v1.8.1)
 
-See **[COMPATIBILITY.md](COMPATIBILITY.md)** for packet codes (client vs server), Vultr regions, and why `window.me` is not available.
+Validated against **`index-CRtgW-HM.js-1.8.1.user.js`** (May 2026 client). Packet letters are unchanged vs `index-eb87bff7.js`; the client now uses Svelte UI and no longer exposes `window.config`.
+
+See **[COMPATIBILITY.md](COMPATIBILITY.md)** for packet codes, Vultr, and why `window.me` is a UI store (not the player).
 
 ```javascript
 // Server packet (letter "a")
